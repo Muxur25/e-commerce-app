@@ -1,6 +1,7 @@
 e-commerce-app project
 Vazifada productlar qanday qo'shilishi ko'rsatilmagan product bo'lmasa dasturni sinab ko'rib bo'lmaydi shuning uchun product qo'shish uchun alohida link qo'shdim
-product qo'shish linki: http://localhost:3000/products/add-page     // login qilish talab qilinmaydi lekin login qilib mahsulot qo'shish talab qilinadi
+product qo'shish linki: http://localhost:3000/products/add-page
+// login qilish talab qilinmaydi lekin login qilib mahsulot qo'shish talab qilinadi
 
 Vazifa mongodb bazasi orqali ishlaydi va sizni virtual bazangizda yangi ecommerce-app degan database yaratadi
 
