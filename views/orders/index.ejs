@@ -1,0 +1,26 @@
+<% title = 'Order History' %>
+
+<h2 class="mb-4">Your Order History</h2>
+
+<% if (orders.length > 0) { %>
+<ul class="list-group">
+	<% orders.forEach(function(order) { %>
+	<li class="list-group-item mb-3">
+		<h5>Order ID: <%= order._id %></h5>
+		<p>Date: <%= order.createdAt %></p>
+		<ul class="list-unstyled">
+			<% order.products.forEach(function(item) { %>
+			<li>
+				<%= item.product.name %> - $<%= item.product.price %> (Quantity: <%=
+				item.quantity %>)
+			</li>
+
+			<% }); %>
+		</ul>
+		<p><strong>Total: $<%= order.totalPrice %></strong></p>
+	</li>
+	<% }); %>
+</ul>
+<% } else { %>
+<p>You have no orders yet. <a href="/products">Shop now</a></p>
+<% } %>

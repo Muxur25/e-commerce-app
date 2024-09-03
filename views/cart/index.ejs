@@ -1,0 +1,25 @@
+<% title = 'Your Cart' %>
+
+<h2>Your Shopping Cart</h2>
+
+<% if (cart && cart.products && cart.products.length > 0) { %>
+<ul class="list-group mb-4">
+	<% cart.products.forEach(function(item) { %>
+	<li class="list-group-item d-flex justify-content-between align-items-center">
+		<%= item.productId.name %> - $<%= item.productId.price %> (Quantity: <%=
+		item.quantity %>)
+		<form action="/cart/remove/<%= item.productId._id %>" method="POST">
+			<button type="submit" class="btn btn-danger btn-sm">Remove</button>
+		</form>
+	</li>
+	<% }); %>
+</ul>
+<div class="d-flex justify-content-between">
+	<h4>Total: $<%= totalPrice %></h4>
+	<form action="/orders/place" method="post">
+		<button type="submit" class="btn btn-success">Place Order</button>
+	</form>
+</div>
+<% } else { %>
+<p>Your cart is empty. <a href="/products">Continue Shopping</a></p>
+<% } %>

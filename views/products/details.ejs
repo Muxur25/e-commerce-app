@@ -1,0 +1,30 @@
+<% title = 'Product Details' %>
+
+<div class="row">
+	<div class="col-md-6">
+		<img
+			src="<%= product.imageUrl %>"
+			class="img-fluid"
+			alt="<%= product.name %>"
+		/>
+	</div>
+	<div class="col-md-6">
+		<h2><%= product.name %></h2>
+		<p class="lead">$<%= product.price %></p>
+		<p><%= product.description %></p>
+		<form action="/cart/add/<%= product._id %>" method="POST">
+			<div class="form-group">
+				<label for="quantity">Quantity</label>
+				<input
+					type="number"
+					class="form-control"
+					id="quantity"
+					name="quantity"
+					value="1"
+					min="1"
+				/>
+			</div>
+			<button type="submit" class="btn btn-success">Add to Cart</button>
+		</form>
+	</div>
+</div>
